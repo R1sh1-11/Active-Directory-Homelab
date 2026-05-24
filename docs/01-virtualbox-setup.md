@@ -17,5 +17,10 @@
 - ISOs must be detached after OS installation or the VM loops back into setup
 - Windows security features can interfere with lab environments
 
+## Screenshots
+
+![VM Running](../screenshots/WindowsServer2022_running.png)
+![Server Desktop](../screenshots/WindowsServer2022_desktop.png) 
+
 ## Next Step
 Configure Active Directory on this VM via Server Manager
