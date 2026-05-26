@@ -9,18 +9,15 @@
 ## Problems & Fixes
 | Problem | Fix |
 |---|---|
-| VirtualBox couldn't access the ISO | Windows Smart App Control was blocking it — disabled SAC and manually mounted the ISO |
+| VirtualBox couldn't access the ISO | Windows Smart App Control was blocking it so I disabled SAC and manually mounted the ISO |
 | VM kept rebooting into installer loop | Removed the ISO from VM storage after install completed |
 
 ## What I Learned
 - How VM storage and boot order works in VirtualBox
-- ISOs must be detached after OS installation or the VM loops back into setup
+- ISOs must be detached after OS installation or the VM loops back into setup (it took way too long to set this up and figure it out)
 - Windows security features can interfere with lab environments
 
 ## Screenshots
 
 ![VM Running](../screenshots/WindowsServer2022_running.png)
 ![Server Desktop](../screenshots/WindowsServer2022_desktop.png) 
-
-## Next Step
-Configure Active Directory on this VM via Server Manager
