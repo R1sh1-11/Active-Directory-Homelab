@@ -95,6 +95,7 @@ critical for attack detection but just good to have.
 *wineventlog index created*
 
 ![wineventlog active](../screenshots/winlogactive.png)
+
 *wineventlog active*
 
 ![inputs.conf DC](../screenshots/configsdc.png)
