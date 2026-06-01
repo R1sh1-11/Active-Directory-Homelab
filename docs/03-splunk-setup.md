@@ -228,7 +228,7 @@ Message: Credential Manager credentials were read
 
 EventCode 5379 means something read stored credentials from Windows Credential 
 Manager. The dollar sign on WINCLIENT01$ means it's a computer account, not a 
-human user — the machine itself triggered this automatically in the background.
+human user (the machine itself triggered this automatically in the background).
 
 In this case it was routine Windows maintenance. But attackers trigger this same 
 EventCode when they use tools like Mimikatz to dump credentials from memory. 
