@@ -62,7 +62,7 @@ BloodHound pulled the full domain structure for `lab.local` including all users,
 ![Bloodhound .json files](../screenshots/succesfulbloodhound.png)
 *Terminal showing the collected `.json` files after running bloodhound-python*
 
-![Bloodhound domain](../screenshots/succesfulbloodhound.png)
+![Bloodhound domain](../screenshots/lab.localinbloodhound.png)
 *BloodHound GUI showing LAB.LOCAL domain node with object info panel*
 
 ![Bloodhound users](../screenshots/usersincypher.png)
