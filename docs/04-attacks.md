@@ -65,7 +65,7 @@ BloodHound pulled the full domain structure for `lab.local` including all users,
 ![Bloodhound domain](../screenshots/succesfulbloodhound.png)
 *BloodHound GUI showing LAB.LOCAL domain node with object info panel*
 
-![Bloodhounr users](../screenshots/usersincypher.png)
+![Bloodhound users](../screenshots/usersincypher.png)
 *Cypher query results showing all enumerated domain users*
 
 **What I learned:** BloodHound gives an attacker a complete picture of the domain in minutes. Defenders have no built-in way to detect or block this since it uses legitimate LDAP queries.
