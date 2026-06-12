@@ -59,7 +59,7 @@ are intentionally vulnerable so I have real targets to practice against.
 | jbond | James Bond | Password123! | Weak password, password spray target |
 | pparker | Peter Parker | spidermanrocks12! | Weak password, DoesNotRequirePreAuth = True, AS-REP Roasting Target |
 | sconnor | Sarah Connor | John@456! | Weak password |
-| svcbackup | Backup Services | Backingup123! | Service account, Kerberoasting target |
+| svcbackup | Backup Services | Password6 | Service account, Kerberoasting target |
 
 All accounts set to Password never expires to simulate a common enterprise misconfiguration.
 
