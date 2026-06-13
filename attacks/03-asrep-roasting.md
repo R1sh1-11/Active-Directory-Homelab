@@ -2,7 +2,9 @@
 ---
 ## Attack 3 — AS-REP Roasting
 **MITRE ATT&CK:** T1558.004 — Steal or Forge Kerberos Tickets: AS-REP Roasting
+
 **Goal:** Capture an offline-crackable Kerberos hash from an account with preauthentication disabled, without using any domain credentials.
+
 **Tools:** Impacket (GetNPUsers), Hashcat
 
 **What I did:**
