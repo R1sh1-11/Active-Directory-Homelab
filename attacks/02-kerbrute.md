@@ -2,8 +2,11 @@
 ---
 ## Attack 2 — User Enumeration (Kerbrute)
 **MITRE ATT&CK:** T1087.002 — Account Discovery: Domain Account
+
 **Goal:** Enumerate valid domain accounts without triggering lockouts or needing credentials.
+
 **Tools:** Kerbrute
+
 **What I did:**
 1. Ran Kerbrute from Kali against the DC using a standard username wordlist
 2. Let it test each username against the Kerberos pre-authentication endpoint
