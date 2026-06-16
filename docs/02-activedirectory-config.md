@@ -1,4 +1,4 @@
-# 02 - Active Directory Setup & Client Configuration
+# 02 : Active Directory Setup & Client Configuration
 
 ## Overview
 This phase turns the bare Windows Server 2022 VM into a working Active Directory 
@@ -8,7 +8,7 @@ future attacks and detections will run against lives here.
 
 ---
 
-## Part 1 — Installing Active Directory Domain Services
+## Part 1 : Installing Active Directory Domain Services
 
 ### What is AD DS?
 Active Directory Domain Services is the Windows role that lets a server manage users, 
@@ -24,10 +24,10 @@ Domain Controller.
 5. After install, clicked the yellow flag and hit "Promote this server to a domain controller"
 
 ### Configuration Choices
-- New forest — building from scratch, no existing AD to join
+- New forest : building from scratch, no existing AD to join
 - Root domain: `lab.local` — internal only, doesn't exist on the public internet
 - NetBIOS name: `LAB` — the short name you see in `LAB\username` format
-- DSRM password — emergency recovery password in case AD breaks
+- DSRM password : emergency recovery password in case AD breaks
 
 ### Why These Choices Matter
 Every company runs one forest. `lab.local` uses `.local` to keep it internal. The NetBIOS 
@@ -46,7 +46,7 @@ Nothing fancy here, just the standard setup you'd find in a real corporate envir
 
 ---
 
-## Part 2 — Creating AD Users
+## Part 2 : Creating AD Users
 
 ### Why We Create Users
 Real networks have hundreds of accounts with different permission levels. Attackers 
@@ -83,7 +83,7 @@ setspn -a HTTP/labbackup.lab.local svcbackup
 
 ---
 
-## Part 3 — Network Configuration
+## Part 3 : Network Configuration
 
 ### Why Internal Network?
 Both VMs started on NAT, meaning they each had their own separate internet connection 
@@ -112,7 +112,7 @@ would look for lab.local on the public internet, find nothing, and fail the doma
 
 ---
 
-## Part 4 — Windows Client Setup
+## Part 4 : Windows Client Setup
 
 ### Why a Separate Client VM?
 Employees at real companies never log directly into the Domain Controller. They use 
@@ -152,7 +152,7 @@ whoami
 
 ---
 
-## Part 5 — Problems & Fixes
+## Part 5 : Problems & Fixes
 
 | Problem | Root Cause | Fix |
 |---|---|---|
