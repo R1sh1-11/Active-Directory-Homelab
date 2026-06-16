@@ -5,7 +5,7 @@ All detections run against the `wineventlog` index. Each query is paired with th
 
 ---
 
-## Detection 1 — Kerbrute (User Enumeration)
+## Detection 1 : Kerbrute (User Enumeration)
 
 **EventCode:** 4771 — Kerberos pre-authentication failed
 
@@ -13,7 +13,7 @@ Note: Kerbrute enumeration does not appear in standard Windows Event Logs. No 47
 
 ---
 
-## Detection 2 — AS-REP Roasting
+## Detection 2 : AS-REP Roasting
 
 **EventCode:** 4768 — Kerberos Ticket Granting Ticket (TGT) requested
 
@@ -31,7 +31,7 @@ index=wineventlog EventCode=4768 Pre_Authentication_Type=0
 
 ---
 
-## Detection 3 — Kerberoasting
+## Detection 3 : Kerberoasting
 
 **EventCode:** 4769 — Kerberos service ticket requested
 
