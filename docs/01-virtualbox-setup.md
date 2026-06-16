@@ -1,4 +1,4 @@
-# 01 - VirtualBox & Windows Server 2022 Setup
+# 01 : VirtualBox & Windows Server 2022 Setup
 
 ## What I Did
 - Created a Windows Server 2022 VM in VirtualBox (4GB RAM, 2 CPUs, 60GB disk)
