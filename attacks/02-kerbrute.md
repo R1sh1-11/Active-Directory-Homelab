@@ -1,6 +1,6 @@
-# Phase 4 — Attacks
+# Phase 4 : Attacks
 ---
-## Attack 2 — User Enumeration (Kerbrute)
+## Attack 2 : User Enumeration (Kerbrute)
 **MITRE ATT&CK:** T1087.002 — Account Discovery: Domain Account
 
 **Goal:** Enumerate valid domain accounts without triggering lockouts or needing credentials.
