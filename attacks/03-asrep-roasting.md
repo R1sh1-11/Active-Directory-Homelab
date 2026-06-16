@@ -1,6 +1,6 @@
-# Phase 4 — Attacks
+# Phase 4 : Attacks
 ---
-## Attack 3 — AS-REP Roasting
+## Attack 3 : AS-REP Roasting
 **MITRE ATT&CK:** T1558.004 — Steal or Forge Kerberos Tickets: AS-REP Roasting
 
 **Goal:** Capture an offline-crackable Kerberos hash from an account with preauthentication disabled, without using any domain credentials.
