@@ -1,4 +1,4 @@
-# 03 - Splunk Setup & Log Forwarding
+# 03 : Splunk Setup & Log Forwarding
 
 ## Overview
 Up until this point the lab had a working AD environment but no visibility into 
@@ -10,7 +10,7 @@ and searchable.
 
 ---
 
-## Part 1 — Installing Splunk on the Domain Controller
+## Part 1 : Installing Splunk on the Domain Controller
 
 ### What is Splunk and why the DC?
 Splunk is a SIEM: Security Information and Event Management. It collects logs 
@@ -103,7 +103,7 @@ critical for attack detection but just good to have.
 
 ---
 
-## Part 2 — Installing Splunk Universal Forwarder on the Client
+## Part 2 : Installing Splunk Universal Forwarder on the Client
 
 ### What is the Universal Forwarder?
 The Universal Forwarder is a lightweight Splunk agent that does one thing: 
@@ -140,7 +140,7 @@ cd "C:\Program Files\SplunkUniversalForwarder\bin"
 
 ---
 
-## Part 3 — Troubleshooting the Connection
+## Part 3 : Troubleshooting the Connection
 
 ### The Problem
 After restarting the forwarder, no logs appeared in Splunk. Running netstat 
@@ -208,7 +208,7 @@ TcpTestSucceeded: True confirmed the firewall rule worked.
 
 ---
 
-## Part 4 — Verifying Logs in Splunk
+## Part 4 : Verifying Logs in Splunk
 
 ### Confirming Events Are Flowing
 Searched index=wineventlog in Splunk and got 61 events in the first 15 minutes, 
@@ -252,7 +252,7 @@ show up when attacks run:
 
 ---
 
-## Part 5 — Configuring Kali on the Internal Network
+## Part 5 : Configuring Kali on the Internal Network
 
 ### Setting a Static IP
 Kali starts on NAT by default. Switched the network adapter to Internal Network 
@@ -290,7 +290,7 @@ both IP and domain name.
 
 ---
 
-## Part 6 — Problems & Fixes
+## Part 6 : Problems & Fixes
 
 | Problem | Root Cause | Fix |
 |---|---|---|
