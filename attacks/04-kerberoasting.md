@@ -1,6 +1,6 @@
-# Phase 4 — Attacks
+# Phase 4 : Attacks
 ---
-## Attack 4 — Kerberoasting
+## Attack 4 : Kerberoasting
 **MITRE ATT&CK:** T1558.003 — Steal or Forge Kerberos Tickets: Kerberoasting
 
 **Goal:** Request a Kerberos service ticket for a service account with an SPN and crack the hash offline to recover the account password.
