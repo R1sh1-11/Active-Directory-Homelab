@@ -1,8 +1,8 @@
-# Phase 4 — Attacks
+# Phase 4 : Attacks
 
 ---
 
-## Attack 1 — Network Reconnaissance (Nmap)
+## Attack 1 : Network Reconnaissance (Nmap)
 
 **MITRE ATT&CK:** T1046 — Network Service Discovery
 
@@ -33,7 +33,7 @@ DC (192.168.10.10) had the full AD fingerprint exposed: Kerberos on 88, LDAP on 
 
 ---
 
-## Attack 2 — AD Enumeration (BloodHound)
+## Attack 2 : AD Enumeration (BloodHound)
 NOTE: I will conduct BloodHound again in future attacks; this was just to play around with it informally. As I accumulate credentials of other users, BloodHound can be formally conducted.
 
 **MITRE ATT&CK:** T1069.002 — Domain Groups, T1087.002 — Domain Account Discovery
