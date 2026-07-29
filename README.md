@@ -113,22 +113,17 @@ can respond in seconds instead of minutes. At scale, that difference matters.
 ```text
 .
 ├── README.md
+├── attacks/
+│   ├── 01-nmap.md
+│   ├── 02-kerbrute.md
+│   ├── 03-asrep-roasting.md
+│   └── 04-kerberoasting.md
+├── detections/
+│   └── splunk-detections.md
 ├── docs/
 │   ├── 01-virtualbox-setup.md
-│   ├── 02-active-directory-setup.md
-│   ├── 03-splunk-setup.md
-│   ├── 04-attacks.md
-│   ├── 05-detections.md
-│   └── 06-ai-triage.md
-├── detections/
-│   ├── kerberoasting.yml
-│   ├── asrep-roasting.yml
-│   ├── password-spraying.yml
-│   ├── pass-the-hash.yml
-│   ├── bloodhound-enumeration.yml
-│   └── privilege-escalation.yml
-├── scripts/
-│   └── ai-triage.py
+│   ├── 02-activedirectory-config.md
+│   └── 03-splunk-setup.md
 └── screenshots/
 ```
 
