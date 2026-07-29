@@ -109,7 +109,9 @@ can respond in seconds instead of minutes. At scale, that difference matters.
 ---
 
 ## Project Structure
-/
+
+```text
+.
 ├── README.md
 ├── docs/
 │   ├── 01-virtualbox-setup.md
@@ -128,7 +130,7 @@ can respond in seconds instead of minutes. At scale, that difference matters.
 ├── scripts/
 │   └── ai-triage.py
 └── screenshots/
----
+```
 
 ## Status
 
