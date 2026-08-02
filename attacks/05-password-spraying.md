@@ -1,3 +1,5 @@
+# Phase 4 : Attacks
+---
 ## Attack 5 : Password Spraying
 **MITRE ATT&CK:** T1110.003 — Brute Force: Password Spraying
 **Goal:** Attempt a small number of common or likely passwords across all known domain accounts to identify weak credentials without triggering account lockout.
