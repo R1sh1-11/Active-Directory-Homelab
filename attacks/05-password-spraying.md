@@ -48,7 +48,7 @@ done < customspray.txt
 **What I found:**
 The generic top-100 list returned zero hits. That result matters as much as the success does. Most real accounts today aren't using literal top passwords like "123456", so a naive spray against a generic list usually fails in practice too. Real attackers build targeted lists based on known password policies, seasonal patterns, and OSINT on the target organization instead of guessing blind.
 
-Switching to a targeted list built around a realistic corporate password policy (capital letter, numbers, symbol) got hits. `jbond` and `sconnor` were both using weak, predictable passwords that fit common patterns. This shows why password spraying works in the real world, it's not about having a magic wordlist, it's about understanding how people actually create passwords under a policy and guessing intelligently.
+Switching to a targeted list built around a realistic corporate password policy (capital letter, numbers, symbol) got hits. `jbond` and `sconnor` were both using weak, predictable passwords that fit common patterns. This shows why password spraying works in the real world, it's not about having a magic wordlist, it's about understanding how people actually create passwords under a policy and guessing intelligently (which was easier for me to do, because I already knew the passwords).
 
 One technical snag: Kerbrute's `passwordspray` command takes a single password as an argument, not a wordlist file. Passing a file path directly just tests the literal string as a password and returns instantly with 0 successes. Fixed by looping through the password list manually in bash, running Kerbrute once per password against the full user list, which is also how password spraying is actually meant to work operationally: one password across every account, then move to the next password.
 
@@ -61,6 +61,9 @@ One technical snag: Kerbrute's `passwordspray` command takes a single password a
 *sconnor password*
 
 ---
-**What I learned:** Password spraying is only as good as the list behind it. A blind generic list will usually fail against anything but the weakest accounts, but a list built around real password policy patterns and organizational context succeeds far more often. The Kerbrute command quirk was also a good reminder to actually read what a tool's flags expect instead of assuming file input works everywhere.
+
+**What I learned:** Password spraying is only as good as the list we have. A blind generic list will usually fail against anything but the weakest accounts, but a list built around real password policy patterns and organizational context succeeds far more often. The Kerbrute command quirk was also a good reminder to actually read what a tool's flags expect instead of assuming file input works everywhere.
+
 **Skills it proves:** Password spraying methodology, lockout-aware authentication testing, password policy pattern analysis, tool troubleshooting under unexpected behavior
+
 ---
