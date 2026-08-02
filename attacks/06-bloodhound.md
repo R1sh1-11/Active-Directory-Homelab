@@ -31,12 +31,13 @@ One setup issue I had: BloodHound CE's backend service (bhapi) failed to start a
 *Domain Admins group membership showing only the built-in Administrator account*
 ![No Path to Domain Admins](../screenshots/pathnotfound.png)
 *Pathfinding confirming no escalation path exists from pparker to Domain Admins*
-![No Path to DC](../screenshotspathnotfoundcomp.png)
+![No Path to DC](../screenshots/pathnotfoundcomp.png)
 *Pathfinding confirming no path exists from pparker to the DC computer object directly*
 
 ---
 **What I learned:** BloodHound's real value isn't about just finding a path, it's definitively ruling paths out too. A clean "no path found" across every compromised account is a real security posture confirmation, not a dead end. I also learned that BloodHound CE's backend and Neo4j maintain separate credential expectations, which is an easy thing to break if you reset one without checking the other.
 
 **Skills it proves:** AD relationship mapping, attack path analysis, privilege escalation assessment, troubleshooting multi-service application stacks
+
 ---
 
