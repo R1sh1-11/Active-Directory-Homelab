@@ -2,8 +2,7 @@
 
 Most people learning cybersecurity do CTF challenges or follow along with tutorials. 
 This isn't that. This is a full corporate network built from scratch, attacked with 
-real tools, and defended with a SIEM and custom detection rules. Then an AI layer on 
-top that does what junior SOC analysts spend most of their day doing.
+real tools, and defended with a SIEM and custom detection rules.
 
 The goal was to simply understand how real breaches actually happen, not just read about them. So that is what I have done over the summer and fall.
 
@@ -21,13 +20,6 @@ BloodHound enumeration, Pass-the-Hash, etc. These are the exact techniques showi
 breach reports right now. Learning them in a controlled environment is how I can actually 
 understand what defenders are up against.
 
-The AI triage layer is where this gets more current. Security teams are drowning in 
-alerts. The average SOC analyst spends hours manually reading logs and deciding what 
-matters. Products like Microsoft Copilot for Security and CrowdStrike Charlotte AI are 
-being built to solve this exact problem at enterprise scale. This project builds a 
-stripped-down version of that from scratch, which is a better way to understand it than 
-reading a product page.
-
 ---
 
 ## What's In Here
@@ -40,20 +32,16 @@ specifically for Kerberoasting. Splunk also runs on the DC as the SIEM, collecti
 from both Windows machines in real time. A Windows client joined to the domain, simulating 
 an employee workstation. And Kali Linux as the attacker machine.
 
-The project runs in four phases. First, building the environment and getting everything 
+The project runs in three phases. First, building the environment and getting everything 
 connected. Second, running attacks from Kali against the AD environment. Third, writing 
-Splunk detection rules that catch each attack in the logs. Fourth, building a Python 
-script that reads those Splunk alerts, sends them to an LLM, and gets back a plain 
-English explanation of what happened, how severe it is, and what to do about it, which will
-be delivered to Slack automatically.
+Splunk detection rules that catch each attack in the logs.
 
 ---
 
 ## Attacks Covered
 
 Every attack in this lab is a real technique with an MITRE ATT&CK mapping. After each 
-one there's a writeup explaining what it looks like in logs and a Splunk query that 
-catches it.
+one there's a writeup explaining what I did, what I found, and what I learned.
 
 The chain starts blind. Nmap maps out what's running on the network, and Kerbrute 
 enumerates valid domain usernames through Kerberos without needing any credentials.
@@ -80,32 +68,16 @@ it.
 
 ## Detection Engineering
 
-For every attack there's a corresponding Splunk SPL query and Sigma rule. Sigma is the 
-industry standard format for sharing detection logic across different SIEM platforms. 
-The rules in this repo can be converted to work with Elastic, Microsoft Sentinel, or 
-any other SIEM with a converter tool.
+For every attack past recon there's a corresponding Splunk SPL query and Sigma rule. 
+Sigma is the industry standard format for sharing detection logic across different SIEM 
+platforms. The rules in this repo can be converted to work with Elastic, Microsoft 
+Sentinel, or any other SIEM with a converter tool.
 
-The detection writeups follow a consistent format: what the attack does, what EventCode 
-it generates, what the query looks like, and what legitimate activity might cause false 
-positives. That last part matters because a detection rule that fires constantly gets 
-ignored, which is almost worse than no rule at all.
-
----
-
-## AI Triage Capstone
-
-The capstone is a Python script that sits on top of Splunk and does first-pass alert 
-triage automatically.
-
-It pulls new alerts from Splunk via the API, sends the raw log data to an LLM with a 
-prompt that asks for severity, attack classification, affected accounts, and recommended 
-response, then formats that into a Slack message that a human analyst can act on 
-immediately.
-
-The point is not that AI replaces the analyst. The point is that an analyst who gets a 
-Slack message saying "High severity: Kerberoasting detected against svcbackup from 
-192.168.10.12 at 14:32, recommend investigating service account permissions immediately" 
-can respond in seconds instead of minutes. At scale, that difference matters.
+The SPL queries and writeups live in `detections/splunk-detections.md`, and each Sigma 
+rule has its own `.yml` file in the same folder. Every detection covers what the attack 
+does, what EventCode it generates, what the query looks like, and what legitimate 
+activity might cause false positives. That last part matters because a detection rule 
+that fires constantly gets ignored, which is almost worse than no rule at all.
 
 ---
 
@@ -115,26 +87,23 @@ can respond in seconds instead of minutes. At scale, that difference matters.
 ├── README.md
 ├── docs/
 │   ├── 01-virtualbox-setup.md
-│   ├── 02-active-directory-setup.md
-│   ├── 03-splunk-setup.md
-│   └── 05-detections.md
+│   ├── 02-activedirectory-config.md
+│   └── 03-splunk-setup.md
 ├── attacks/
-│   ├── 01-Nmap.md
-│   ├── 02-Kerbrute.md
-│   ├── 03-ASREP-Roasting.md
-│   ├── 04-Kerberoasting.md
-│   ├── 05-passwordspraying.md
+│   ├── 01-nmap.md
+│   ├── 02-kerbrute.md
+│   ├── 03-asrep-roasting.md
+│   ├── 04-kerberoasting.md
+│   ├── 05-password-spraying.md
 │   ├── 06-bloodhound.md
 │   └── 07-passthehash.md
 ├── detections/
+│   ├── splunk-detections.md
 │   ├── asrep-roasting.yml
 │   ├── kerberoasting.yml
 │   ├── password-spraying.yml
 │   ├── bloodhound-enumeration.yml
 │   └── pass-the-hash.yml
-├── scripts/
-│   ├── ai-triage.py
-│   └── SETUP.md
 └── screenshots/
 ```
 
@@ -154,7 +123,4 @@ mean owning the domain if permissions are set up right.
 ## Background
 
 This was built over the summer and fall of 2026 at UNC Charlotte, where I study Computer 
-Science with a concentration in Cybersecurity. The AI triage component connects directly 
-to my honors thesis research on AI agent security, which looks at how AI systems get 
-attacked rather than how they defend. Understanding both sides is the only way to do 
-either one well.
+Science with a concentration in Cybersecurity.
