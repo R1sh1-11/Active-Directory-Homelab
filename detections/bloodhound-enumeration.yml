@@ -1,0 +1,23 @@
+title: BloodHound AD Enumeration
+status: experimental
+description: Detects potential BloodHound enumeration via high volume LDAP object access
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4662
+        ObjectType:
+            - 'groupPolicyContainer'
+            - 'organizationalUnit'
+            - 'user'
+            - 'group'
+    timeframe: 1m
+    condition: selection | count() > 100
+falsepositives:
+    - AD administrative tools
+    - Legitimate directory synchronization
+level: medium
+tags:
+    - attack.discovery
+    - attack.t1087.002
