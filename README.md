@@ -1,7 +1,7 @@
 # Active Directory Detection Lab
 
 Most people learning cybersecurity do CTF challenges or follow along with tutorials. 
-This isn't that. This is a full corporate network built from scratch, attacked with 
+This isn't that. This is a small Active Directory lab built from scratch, attacked with 
 real tools, and defended with a SIEM and custom detection rules.
 
 The goal was to simply understand how real breaches actually happen, not just read about them. So that is what I have done over the summer and fall.
@@ -16,8 +16,7 @@ SolarWinds, Colonial Pipeline, the NHS ransomware attack, literally all of them 
 attackers moving through AD undetected until it was too late.
 
 The attacks in this lab are: Kerberoasting, AS-REP Roasting, Password Spraying, 
-BloodHound enumeration, Pass-the-Hash, etc. These are the exact techniques showing up in 
-breach reports right now. Learning them in a controlled environment is how I can actually 
+BloodHound enumeration, Pass-the-Hash. Learning them in a controlled environment is how I can actually 
 understand what defenders are up against.
 
 ---
@@ -67,6 +66,7 @@ it.
 ---
 
 ## Detection Engineering
+Detections are written for each attack; validating them against lab telemetry is in progress.
 
 For every attack past recon there's a corresponding Splunk SPL query and Sigma rule. 
 Sigma is the industry standard format for sharing detection logic across different SIEM 
