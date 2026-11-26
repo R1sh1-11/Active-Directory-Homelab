@@ -12,8 +12,6 @@ The goal was to simply understand how real breaches actually happen, not just re
 
 Active Directory runs the internal networks of nearly every company on earth. When you 
 hear about a major breach, the attackers almost always ended up in Active Directory. 
-SolarWinds, Colonial Pipeline, the NHS ransomware attack, literally all of them involved 
-attackers moving through AD undetected until it was too late.
 
 The attacks in this lab are: Kerberoasting, AS-REP Roasting, Password Spraying, 
 BloodHound enumeration, Pass-the-Hash. Learning them in a controlled environment is how I can actually 
